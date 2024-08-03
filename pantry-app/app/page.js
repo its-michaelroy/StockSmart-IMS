@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 export default function Home() {
   return (
     <Box>
-      <Typography variant="h1">Hello, Sanla! Voce é muito Bonita!!</Typography>
+      <Typography variant="h1">Hello everyone!!</Typography>
     </Box>
   );
 }
