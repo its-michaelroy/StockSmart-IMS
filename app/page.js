@@ -13,6 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
+import { Analytics } from "@vercel/analytics/react";
 import {
   collection,
   deleteDoc,
