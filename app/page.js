@@ -162,11 +162,13 @@ export default function Home() {
       <Box
         sx={{
           display: "flex",
-          flexDirection: { xs: "column", sm: "row" }, // Stack on small devices, row on others
+          flexDirection: { xs: "column", sm: "row" },
           alignItems: "center",
+          justifyContent: { xs: "center", sm: "space-between" },
           width: "100%",
-          maxWidth: { sm: "600px", md: "800px" }, // Limiting maximum width for medium screens and up
+          maxWidth: { sm: "600px", md: "800px" },
           marginBottom: "20px",
+          gap: { xs: "10px", sm: "20px" },
         }}
       >
         <TextField
@@ -176,8 +178,8 @@ export default function Home() {
           onChange={(e) => setSearchQuery(e.target.value.toLowerCase())}
           sx={{
             flex: 1,
-            marginRight: { sm: "20px" }, // Spacing between elements on devices larger than small
-            marginBottom: { xs: "20px", sm: "0" }, // Spacing for small devices
+            marginRight: { sm: "20px" },
+            marginBottom: { xs: "20px", sm: "0" },
             "& .MuiInputLabel-root": { color: "white" },
             "& .MuiOutlinedInput-root": {
               color: "white",
@@ -207,7 +209,11 @@ export default function Home() {
             "&:hover": {
               background: "linear-gradient(to top, #651FFF, #00B8D4)",
             },
-            marginRight: 2, // Add some spacing between buttons
+            fontSize: { xs: "0.7rem", sm: "0.8rem", md: "0.9rem" },
+            padding: { xs: "6px 10px", sm: "8px 15px", md: "10px 20px" },
+            whiteSpace: "nowrap",
+            minWidth: { xs: "100%", sm: "auto" },
+            marginTop: { xs: "10px", sm: "0" },
           }}
         >
           Add New Item(s)
@@ -224,23 +230,24 @@ export default function Home() {
             "&:hover": {
               background: "linear-gradient(to top, #651FFF, #00B8D4)",
             },
+            fontSize: { xs: "0.7rem", sm: "0.8rem", md: "0.9rem" },
+            padding: { xs: "6px 10px", sm: "8px 15px", md: "10px 20px" },
+            whiteSpace: "nowrap",
+            minWidth: { xs: "100%", sm: "auto" },
+            marginTop: { xs: "10px", sm: "0" },
           }}
         >
           Download CSV
         </Button>
       </Box>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        sx={{ overflow: "auto" }} // Allow scrolling inside modal on smaller devices
-      >
+      <Modal open={open} onClose={handleClose} sx={{ overflow: "auto" }}>
         <Box
           sx={{
             position: "absolute",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            width: { xs: "90vw", sm: "50vw", md: "600px" }, // Adjust width responsively
+            width: { xs: "90vw", sm: "50vw", md: "600px" },
             bgcolor: "background.paper",
             border: "2px solid #fff",
             boxShadow: 24,
@@ -296,7 +303,7 @@ export default function Home() {
       <Box
         sx={{
           width: "100%",
-          maxWidth: { sm: "600px", md: "800px" }, // Responsive maximum width
+          maxWidth: { sm: "600px", md: "800px" },
           maxHeight: "60vh",
           overflow: "auto",
           border: "2px solid black",
@@ -315,10 +322,10 @@ export default function Home() {
               m: 1,
               bgcolor: "#F5F5F5",
               borderRadius: "8px",
-              transition: "background-color 0.3s", // Add smooth transition
+              transition: "background-color 0.3s",
               "&:hover": {
-                bgcolor: "#D0D0D0", // Darker gray on hover
-                cursor: "pointer", // Change cursor to indicate interactivity
+                bgcolor: "#D0D0D0",
+                cursor: "pointer",
               },
             }}
           >
@@ -328,7 +335,7 @@ export default function Home() {
                 flexGrow: 1,
                 color: "#333",
                 fontWeight: "bold",
-                fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" }, // Responsive font size for item names
+                fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
               }}
             >
               {name}
@@ -339,7 +346,7 @@ export default function Home() {
                 color: "#333",
                 fontWeight: "bold",
                 minWidth: "50px",
-                fontSize: { xs: "0.875rem", sm: "1rem", md: "1.25rem" }, // Smaller font size on smaller screens
+                fontSize: { xs: "0.875rem", sm: "1rem", md: "1.25rem" },
               }}
             >
               {quantity}
@@ -353,7 +360,7 @@ export default function Home() {
                   fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
                 },
                 "&:hover": {
-                  backgroundColor: "rgba(124, 77, 255, 0.2)", // Bluish-purple with opacity
+                  backgroundColor: "rgba(124, 77, 255, 0.2)",
                 },
               }}
             >
@@ -368,7 +375,7 @@ export default function Home() {
                   fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
                 },
                 "&:hover": {
-                  backgroundColor: "rgba(124, 77, 255, 0.2)", // Bluish-purple with opacity
+                  backgroundColor: "rgba(124, 77, 255, 0.2)",
                 },
               }}
             >
