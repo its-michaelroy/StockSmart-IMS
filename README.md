@@ -1,4 +1,34 @@
+# AI Pantry Inventory
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Description
+
+Welcome to my Ai Pantry Inventory App! This is a simple app that allows you to track your pantry inventory. It uses the OpenAI API to help you manage your inventory. Add/Remove/Update items and see the total count of each item in your pantry.
+
+## Features
+
+- Add/Remove/Update items and see the total count of each item in your pantry.
+- Download your pantry inventory to a CSV file.
+- Uses the OpenAI API to help you manage your inventory.
+- Simple and easy to use interface.
+- Search for items in your pantry.
+- Save your pantry inventory to your local storage.
+- Load your pantry inventory from your local storage.
+- Responsive design for all devices.
+
+## Future Features
+
+- Accounts for multiple users.
+- Dark mode and light mode.
+- Add a recipe finder/creator feature.
+- Add a meal planner feature.
+
+### Screenshots/Video
+
+- (Add later)
 
 ## Getting Started
 

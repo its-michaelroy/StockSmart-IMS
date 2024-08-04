@@ -108,6 +108,29 @@ export default function Home() {
     item.name.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
+  const generateCSV = (inventoryData) => {
+    const headers = "Item,Quantity\n";
+    const rows = inventoryData
+      .map(({ name, quantity }) => `${name},${quantity}`)
+      .join("\n");
+    return headers + rows;
+  };
+
+  const downloadCSV = () => {
+    const csvContent = generateCSV(inventory);
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const link = document.createElement("a");
+    if (link.download !== undefined) {
+      const url = URL.createObjectURL(blob);
+      link.setAttribute("href", url);
+      link.setAttribute("download", "pantry_inventory.csv");
+      link.style.visibility = "hidden";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -184,9 +207,26 @@ export default function Home() {
             "&:hover": {
               background: "linear-gradient(to top, #651FFF, #00B8D4)",
             },
+            marginRight: 2, // Add some spacing between buttons
           }}
         >
           Add New Item(s)
+        </Button>
+        <Button
+          variant="contained"
+          onClick={downloadCSV}
+          sx={{
+            background: "linear-gradient(to top, #7C4DFF, #18FFFF)",
+            color: "#fff",
+            fontWeight: "bold",
+            textShadow: "0px 0px 8px rgba(0,0,0,0.8)",
+            boxShadow: "0 2px 4px rgba(0, 0, 0, 0.5)",
+            "&:hover": {
+              background: "linear-gradient(to top, #651FFF, #00B8D4)",
+            },
+          }}
+        >
+          Download CSV
         </Button>
       </Box>
       <Modal
@@ -277,7 +317,7 @@ export default function Home() {
               borderRadius: "8px",
               transition: "background-color 0.3s", // Add smooth transition
               "&:hover": {
-                bgcolor: "#D0D0D0", // Lighter gray on hover
+                bgcolor: "#D0D0D0", // Darker gray on hover
                 cursor: "pointer", // Change cursor to indicate interactivity
               },
             }}
