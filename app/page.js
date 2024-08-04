@@ -275,6 +275,11 @@ export default function Home() {
               m: 1,
               bgcolor: "#F5F5F5",
               borderRadius: "8px",
+              transition: "background-color 0.3s", // Add smooth transition
+              "&:hover": {
+                bgcolor: "#D0D0D0", // Lighter gray on hover
+                cursor: "pointer", // Change cursor to indicate interactivity
+              },
             }}
           >
             <Typography
@@ -302,16 +307,32 @@ export default function Home() {
             <IconButton
               color="success"
               onClick={() => addItem(name)}
-              sx={{ mx: 1 }}
+              sx={{
+                mx: 1,
+                "& .MuiSvgIcon-root": {
+                  fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+                },
+                "&:hover": {
+                  backgroundColor: "rgba(124, 77, 255, 0.2)", // Bluish-purple with opacity
+                },
+              }}
             >
-              <AddIcon fontSize="large" />
+              <AddIcon />
             </IconButton>
             <IconButton
               color="error"
               onClick={() => removeItem(name)}
-              sx={{ mx: 1 }}
+              sx={{
+                mx: 1,
+                "& .MuiSvgIcon-root": {
+                  fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem" },
+                },
+                "&:hover": {
+                  backgroundColor: "rgba(124, 77, 255, 0.2)", // Bluish-purple with opacity
+                },
+              }}
             >
-              <DeleteIcon fontSize="large" />
+              <DeleteIcon />
             </IconButton>
           </Box>
         ))}
