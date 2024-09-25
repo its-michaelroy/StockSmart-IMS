@@ -1,0 +1,12 @@
+version: 2
+updates:
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    open-pull-requests-limit: 5
+    labels:
+      - 'dependencies'
+      - 'npm'
+    # Optional: Add specific target versions
+    # target-branch: 'main' # Specify the branch if not 'main'
