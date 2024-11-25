@@ -1,5 +1,6 @@
 "use client";
-import { firestore } from "@/firebase";
+import { auth, firestore } from "@/firebase";
+import { signOut } from 'firebase/auth';
 import AddIcon from "@mui/icons-material/Add";
 import DeleteIcon from "@mui/icons-material/Delete";
 import SearchIcon from "@mui/icons-material/Search";
@@ -25,8 +26,10 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { useEffect, useState } from "react";
+import { useRouter } from 'next/navigation';
 
 export default function Home() {
+    const router = useRouter();
   const [inventory, setInventory] = useState([]);
   const [open, setOpen] = useState(false);
   const [item, setItem] = useState("");
